@@ -1,7 +1,7 @@
 ﻿using StackExchange.Redis;
 using TestRedisCache;
 
-var redisCache = ConnectionMultiplexer.Connect("localhost:6379").GetDatabase();
+var redisCache = ConnectionMultiplexer.Connect("localhost:6379,defaultdatabase=1").GetDatabase();
 
 foreach (var key in new List<string> { "key1", "key1", "key2" })
 {
